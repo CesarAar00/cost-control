@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
-import 'opciones.dart';
+import 'package:myapp/opciones.dart';
 
 void main() async {
   await GetStorage.init();
-  runApp(const MyApp()); //
+  runApp(MyApp()); //
 }
 
 class MyApp extends StatelessWidget {
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       home: Builder(builder: (context) {
         return Scaffold(
           appBar: AppBar(
-            title: const Text('Bienvenido'),
+            title: Text('Bienvenido'),
           ),
           body: Center(
             child: ElevatedButton(
@@ -38,3 +38,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
