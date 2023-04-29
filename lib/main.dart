@@ -17,22 +17,24 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Bienvenido'),
-        ),
-        body: Center(
-          child: ElevatedButton(
-            child: const Text('Empecemos'),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Opciones()),
-              );
-            },
+      home: Builder(builder: (context) {
+        return Scaffold(
+          appBar: AppBar(
+            title: const Text('Bienvenido'),
           ),
-        ),
-      ), 
+          body: Center(
+            child: ElevatedButton(
+              child: const Text('Empecemos'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Opciones()),
+                );
+              },
+            ),
+          ),
+        );
+      }),
     );
   }
 }
