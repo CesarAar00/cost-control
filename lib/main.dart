@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:myapp/opciones.dart';
+import 'opciones.dart';
 
 void main() async {
-  await GetStorage.init(); 
-  runApp(MyApp()); // 
+  await GetStorage.init();
+  runApp(const MyApp()); //
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,11 +19,11 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Bienvenido'),
+          title: const Text('Bienvenido'),
         ),
         body: Center(
           child: ElevatedButton(
-            child: Text('Empecemos'),
+            child: const Text('Empecemos'),
             onPressed: () {
               Navigator.push(
                 context,
