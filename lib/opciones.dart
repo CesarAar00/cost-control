@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Movimientos.dart';
+import 'resumen.dart';
 import 'Registros.dart';
 //import 'compras_page.dart';
 //import 'ventas_page.dart';
@@ -20,7 +20,7 @@ class Opciones extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Movimientos()),
+                  MaterialPageRoute(builder: (context) => Resumen()),
                 );
               },
             ),
