@@ -16,7 +16,7 @@ class Opciones extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
-              child: Text('Movimientos'),
+              child: Text('Resumen'),
               onPressed: () {
                 Navigator.push(
                   context,
