@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 
-class RegistrosPage extends StatefulWidget {
+class Registros extends StatefulWidget {
   @override
-  _RegistrosPageState createState() => _RegistrosPageState();
+  _RegistrosState createState() => _RegistrosState();
 }
 
-class _RegistrosPageState extends State<RegistrosPage> {
+class _RegistrosState extends State<Registros> {
   final box = GetStorage();
-
+  final _boldStyle =
+      TextStyle(fontWeight: FontWeight.normal, color: Colors.white);
   final _ingresoController = TextEditingController();
   final _retiroController = TextEditingController();
 
@@ -19,7 +20,7 @@ class _RegistrosPageState extends State<RegistrosPage> {
   void initState() {
     super.initState();
     total = box.read('total') ?? 0;
-    contador = box.read('contador') ?? 0;//almacena el valor
+    contador = box.read('contador') ?? 0; //almacena el valor
   }
 
   void _ingresarMonto() {
@@ -66,16 +67,34 @@ class _RegistrosPageState extends State<RegistrosPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Registros'),
+        backgroundColor: Color.fromARGB(255, 30, 31, 49),
       ),
       body: Container(
+        constraints: BoxConstraints.expand(),
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: NetworkImage(
+              'https://c0.wallpaperflare.com/preview/241/384/859/analysis-analytics-analyzing-annual.jpg',
+            ),
+            fit: BoxFit.cover,
+          ),
+        ),
         padding: EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Maneja tu dinero aquí',
-              style: TextStyle(fontSize: 24.0),
+            Container(
+              padding: EdgeInsets.all(8.0),
+              decoration: BoxDecoration(
+                color: Colors.grey[700],
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              child: Text(
+                'Maneja tu dinero aquí',
+                style: _boldStyle.copyWith(fontSize: 24.0),
+              ),
             ),
+
             SizedBox(height: 16.0),
             TextField(
               controller: _ingresoController,
@@ -83,11 +102,18 @@ class _RegistrosPageState extends State<RegistrosPage> {
               decoration: InputDecoration(
                 labelText: 'Ingresar monto',
                 border: OutlineInputBorder(),
+                labelStyle: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.normal,
+                ),
               ),
             ),
             SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: _ingresarMonto,
+              style: ElevatedButton.styleFrom(
+                primary: Colors.grey[700],
+              ),
               child: Text('Ingresar dinero'),
             ),
             SizedBox(height: 32.0),
@@ -97,17 +123,32 @@ class _RegistrosPageState extends State<RegistrosPage> {
               decoration: InputDecoration(
                 labelText: 'Retirar monto',
                 border: OutlineInputBorder(),
+                labelStyle: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.normal,
+                ),
               ),
             ),
             SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: _retirarMonto,
+              style: ElevatedButton.styleFrom(
+                primary: Colors.grey[700],
+              ),
               child: Text('Retirar dinero'),
             ),
+
             SizedBox(height: 32.0),
-            Text(
-              'Total: $contador',
-              style: TextStyle(fontSize: 20.0),
+            Container(
+              padding: EdgeInsets.all(8.0),
+              decoration: BoxDecoration(
+                color: Colors.grey[700],
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              child: Text(
+                'Total: $contador',
+                style: _boldStyle.copyWith(fontSize: 20.0),
+              ),
             ),
             // SizedBox(height: 8.0),
             // Text(
