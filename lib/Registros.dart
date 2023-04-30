@@ -66,7 +66,7 @@ class _RegistrosState extends State<Registros> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Registros'),
+        title: Text('Movimiento de Activos'),
         backgroundColor: Color.fromARGB(255, 30, 31, 49),
       ),
       body: Container(
