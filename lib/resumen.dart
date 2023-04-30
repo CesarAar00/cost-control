@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 
-class Movimientos extends StatefulWidget {
-  const Movimientos({Key? key}) : super(key: key);
+class Resumen extends StatefulWidget {
+  const Resumen({Key? key}) : super(key: key);
 
   @override
-  State<Movimientos> createState() => _MovimientosState();
+  State<Resumen> createState() => _ResumenState();
 }
 
-class _MovimientosState extends State<Movimientos> {
+class _ResumenState extends State<Resumen> {
   String mesSeleccionado = 'Enero'; // El mes seleccionado por defecto es enero
   List<String> tiposDeGastos = ['Alcohol', 'Comida', 'Vestimenta', 'Mascotas'];
 
